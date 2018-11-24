@@ -1,5 +1,9 @@
 # Sidekiq::Clockwork
 
+[![Build Status](https://travis-ci.org/fnando/sidekiq-clockwork.svg)](https://travis-ci.org/fnando/sidekiq-clockwork)
+[![Code Climate](https://codeclimate.com/github/fnando/sidekiq-clockwork/badges/gpa.svg)](https://codeclimate.com/github/fnando/sidekiq-clockwork)
+[![Gem Version](https://badge.fury.io/rb/sidekiq-clockwork.svg)](http://badge.fury.io/rb/sidekiq-clockwork)
+
 Sidekiq::Clockwork is a simplistic implementation of a job scheduler based on Clockwork, but without having to run a separated process.
 
 ## Installation
