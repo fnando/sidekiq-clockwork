@@ -43,9 +43,11 @@ module Sidekiq
 
     def run_error_handlers(error)
       error_handlers.each do |handler|
-        handler.call(error)
-      rescue StandardError => handler_error
-        $stderr << error_message(handler_error, "Error handler raised exception. ")
+        begin
+          handler.call(error)
+        rescue StandardError => handler_error
+          $stderr << error_message(handler_error, "Error handler raised exception. ")
+        end
       end
     end
 
