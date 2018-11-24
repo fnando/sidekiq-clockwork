@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sidekiq-clockwork (0.1.0)
+    sidekiq-clockwork (0.1.1)
       sidekiq
 
 GEM
@@ -31,4 +31,4 @@ DEPENDENCIES
   sidekiq-clockwork!
 
 BUNDLED WITH
-   1.16.4
+   1.17.1
