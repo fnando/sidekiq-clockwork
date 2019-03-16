@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "sidekiq/clockwork/version"
 
 module Sidekiq
@@ -63,7 +65,9 @@ module Sidekiq
 
     def run_job(job)
       now = Time.now
+
       return if now < job[:run_at]
+
       job[:run_at] = now + job[:interval]
       job[:block].call
     rescue StandardError => error
@@ -95,11 +99,9 @@ module Sidekiq
             run_job(job)
           end
 
-          if interrupt?
-            break
-          else
-            sleep(sleep_timeout)
-          end
+          break if interrupt?
+
+          sleep(sleep_timeout)
         end
       end
     end

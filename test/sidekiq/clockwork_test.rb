@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "test_helper"
 
 module Sidekiq
@@ -10,6 +12,7 @@ class ClockworkTest < Minitest::Test
   def wait_for_interruption(clockwork)
     loop do
       break if clockwork.interrupt?
+
       sleep 0.01
     end
   end
@@ -47,7 +50,7 @@ class ClockworkTest < Minitest::Test
       wait_for_interruption(clockwork)
     end
 
-    assert_equal "[SIDEKIQ:CLOCKWORK] RuntimeError: ouch! (#{__FILE__}:39:in `block (4 levels) in <class:ClockworkTest>')\n", stderr
+    assert_equal "[SIDEKIQ:CLOCKWORK] RuntimeError: ouch! (#{__FILE__}:41:in `block (4 levels) in <class:ClockworkTest>')\n", stderr
   end
 
   test "use custom error handler" do
@@ -77,7 +80,7 @@ class ClockworkTest < Minitest::Test
       clockwork = Sidekiq::Clockwork.run do
         error_handlers.clear
 
-        error_handler do |error|
+        error_handler do |_error|
           raise "i had one job"
         end
 
@@ -93,6 +96,6 @@ class ClockworkTest < Minitest::Test
       wait_for_interruption(clockwork)
     end
 
-    assert_equal stderr, "[SIDEKIQ:CLOCKWORK] Error handler raised exception. RuntimeError: i had one job (#{__FILE__}:81:in `block (4 levels) in <class:ClockworkTest>')\n"
+    assert_equal stderr, "[SIDEKIQ:CLOCKWORK] Error handler raised exception. RuntimeError: i had one job (#{__FILE__}:83:in `block (4 levels) in <class:ClockworkTest>')\n"
   end
 end
