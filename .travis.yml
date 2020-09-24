@@ -3,8 +3,8 @@ sudo: false
 language: ruby
 cache: bundler
 rvm:
-  - 2.6.3
-  - 2.5.5
+  - 2.7.1
+  - 2.6.5
 notifications:
   email: false
 before_install: gem install bundler

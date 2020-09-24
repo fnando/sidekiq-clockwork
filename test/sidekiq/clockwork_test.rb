@@ -50,7 +50,10 @@ class ClockworkTest < Minitest::Test
       wait_for_interruption(clockwork)
     end
 
-    assert_equal "[SIDEKIQ:CLOCKWORK] RuntimeError: ouch! (#{__FILE__}:42:in `block (4 levels) in <class:ClockworkTest>')\n", stderr
+    error = "[SIDEKIQ:CLOCKWORK] RuntimeError: ouch! (#{__FILE__}:42:in " \
+            "`block (4 levels) in <class:ClockworkTest>')\n"
+
+    assert_equal error, stderr
   end
 
   test "use custom error handler" do
@@ -96,6 +99,9 @@ class ClockworkTest < Minitest::Test
       wait_for_interruption(clockwork)
     end
 
-    assert_equal stderr, "[SIDEKIQ:CLOCKWORK] Error handler raised exception. RuntimeError: i had one job (#{__FILE__}:84:in `block (4 levels) in <class:ClockworkTest>')\n"
+    assert_equal stderr,
+                 "[SIDEKIQ:CLOCKWORK] Error handler raised exception. " \
+                 "RuntimeError: i had one job (#{__FILE__}:87:in `block " \
+                 "(4 levels) in <class:ClockworkTest>')\n"
   end
 end

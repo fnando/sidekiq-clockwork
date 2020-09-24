@@ -45,16 +45,15 @@ module Sidekiq
 
     def run_error_handlers(error)
       error_handlers.each do |handler|
-        begin
-          handler.call(error)
-        rescue StandardError => handler_error
-          $stderr << error_message(handler_error, "Error handler raised exception. ")
-        end
+        handler.call(error)
+      rescue StandardError => error
+        $stderr << error_message(error, "Error handler raised exception. ")
       end
     end
 
     def error_message(error, prefix = nil)
-      "[SIDEKIQ:CLOCKWORK] #{prefix}#{error.class}: #{error.message} (#{error.backtrace_locations.first})\n"
+      "[SIDEKIQ:CLOCKWORK] #{prefix}#{error.class}: #{error.message} " \
+      "(#{error.backtrace_locations.first})\n"
     end
 
     def use_default_error_handler
