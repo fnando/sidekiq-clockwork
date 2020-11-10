@@ -4,7 +4,11 @@ require "simplecov"
 SimpleCov.start
 
 require "bundler/setup"
-$LOAD_PATH.unshift File.expand_path("../lib", __dir__)
-require "sidekiq/clockwork"
+require "sidekiq-clockwork"
+
 require "minitest/utils"
 require "minitest/autorun"
+
+Dir["#{__dir__}/support/**/*.rb"].sort.each do |file|
+  require file
+end
