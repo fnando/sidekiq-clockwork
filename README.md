@@ -5,7 +5,8 @@
 [![Gem](https://img.shields.io/gem/v/sidekiq-clockwork.svg)](https://rubygems.org/gems/sidekiq-clockwork)
 [![Gem](https://img.shields.io/gem/dt/sidekiq-clockwork.svg)](https://rubygems.org/gems/sidekiq-clockwork)
 
-TODO: Add project description here
+Sidekiq::Clockwork is a simplistic implementation of a job scheduler based on
+Clockwork, but without having to run a separated process.
 
 ## Installation
 
