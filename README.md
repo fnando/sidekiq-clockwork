@@ -1,6 +1,6 @@
 # sidekiq-clockwork
 
-[![Tests](https://github.com/fnando/sidekiq-clockwork/workflows/Tests/badge.svg)](https://github.com/fnando/sidekiq-clockwork)
+[![Tests](https://github.com/fnando/sidekiq-clockwork/workflows/ruby-tests/badge.svg)](https://github.com/fnando/sidekiq-clockwork)
 [![Gem](https://img.shields.io/gem/v/sidekiq-clockwork.svg)](https://rubygems.org/gems/sidekiq-clockwork)
 [![Gem](https://img.shields.io/gem/dt/sidekiq-clockwork.svg)](https://rubygems.org/gems/sidekiq-clockwork)
 
