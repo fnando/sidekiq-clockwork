@@ -1,7 +1,6 @@
 # sidekiq-clockwork
 
 [![Tests](https://github.com/fnando/sidekiq-clockwork/workflows/Tests/badge.svg)](https://github.com/fnando/sidekiq-clockwork)
-[![Code Climate](https://codeclimate.com/github/fnando/sidekiq-clockwork/badges/gpa.svg)](https://codeclimate.com/github/fnando/sidekiq-clockwork)
 [![Gem](https://img.shields.io/gem/v/sidekiq-clockwork.svg)](https://rubygems.org/gems/sidekiq-clockwork)
 [![Gem](https://img.shields.io/gem/dt/sidekiq-clockwork.svg)](https://rubygems.org/gems/sidekiq-clockwork)
 
