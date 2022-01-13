@@ -8,10 +8,12 @@ Gem::Specification.new do |spec|
   spec.authors = ["Nando Vieira"]
   spec.email   = ["me@fnando.com"]
 
-  spec.summary     = "Add some description"
+  spec.summary = "Sidekiq::Clockwork is a simplistic implementation of a job " \
+                 "scheduler based on Clockwork, but without having to run a " \
+                 "separate process."
   spec.description = spec.summary
   spec.license     = "MIT"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.6.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.7.0")
 
   github_url = "https://github.com/fnando/sidekiq-clockwork"
   github_tree_url = "#{github_url}/tree/v#{spec.version}"
@@ -23,6 +25,7 @@ Gem::Specification.new do |spec|
   spec.metadata["changelog_uri"] = "#{github_tree_url}/CHANGELOG.md"
   spec.metadata["documentation_uri"] = "#{github_tree_url}/README.md"
   spec.metadata["license_uri"] = "#{github_tree_url}/LICENSE.md"
+  spec.metadata["rubygems_mfa_required"] = "true"
 
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
     `git ls-files -z`

@@ -53,7 +53,7 @@ module Sidekiq
 
     def error_message(error, prefix = nil)
       "[SIDEKIQ:CLOCKWORK] #{prefix}#{error.class}: #{error.message} " \
-      "(#{error.backtrace_locations.first})\n"
+        "(#{error.backtrace_locations.first})\n"
     end
 
     def use_default_error_handler
